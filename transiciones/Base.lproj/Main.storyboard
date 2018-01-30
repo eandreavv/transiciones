@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="transiciones" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F15-AG-tQp">
+                                <rect key="frame" x="16" y="0.0" width="343" height="611"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SY1-GT-tjz">
+                                        <rect key="frame" x="8" y="129" width="327" height="309"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="D7C-gY-7Tg" appends="YES" id="gnX-Qt-sV2"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asZ-4t-3Je">
+                                <rect key="frame" x="139" y="629" width="97" height="30"/>
+                                <state key="normal" title="trancisión"/>
+                                <connections>
+                                    <action selector="doTapTrancision:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aPX-54-bMS"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="F15-AG-tQp" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NG1-BH-Lsi"/>
+                            <constraint firstItem="F15-AG-tQp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="W74-Qu-lSa"/>
+                            <constraint firstItem="asZ-4t-3Je" firstAttribute="top" secondItem="F15-AG-tQp" secondAttribute="bottom" constant="18" id="ZNi-0X-zz7"/>
+                            <constraint firstItem="asZ-4t-3Je" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="123" id="cyK-mX-9ea"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="F15-AG-tQp" secondAttribute="bottom" constant="80" id="ecj-qs-ubs"/>
+                            <constraint firstItem="F15-AG-tQp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="lXx-s8-eCz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="asZ-4t-3Je" secondAttribute="trailing" constant="123" id="nI8-hH-7SA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="asZ-4t-3Je" secondAttribute="bottom" constant="8" id="uS6-dg-Zy1"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HuU-zV-pz3" appends="YES" id="su6-DB-3DY"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="lblNumero" destination="SY1-GT-tjz" id="nsl-h9-N8s"/>
+                        <outlet property="vwContenedorNumero" destination="F15-AG-tQp" id="72v-EC-1GL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="D7C-gY-7Tg" userLabel="Swipe Up">
+                    <connections>
+                        <action selector="doSwipeUpContenedor:" destination="BYZ-38-t0r" id="oeQ-Y3-96p"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="HuU-zV-pz3" userLabel="Swipe Down">
+                    <connections>
+                        <action selector="doSwipeDownContenedor:" destination="BYZ-38-t0r" id="E0R-8z-cy2"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
